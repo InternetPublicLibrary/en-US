@@ -2,129 +2,105 @@
 layout: default
 title: Recent Changes
 lang: en-US
-description: See the latest updates and changes made to the Internet Public Library. Track new resources, edits, and
-community contributions.
+description: See the latest updates to IPL.
 permalink: /en-US/recent-changes/
 ---
 
-<div class="min-h-screen bg-gray-50 py-12">
+<!-- Hero -->
+<section class="bg-gradient-to-r from-slate-700 to-slate-900 text-white py-12">
     <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="flex items-center justify-between mb-8">
-                <div>
-                    <h1 class="text-3xl font-bold text-gray-900">Recent Changes</h1>
-                    <p class="text-gray-600">Track the latest updates to IPL</p>
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-bold mb-2">Recent Changes</h1>
+                <p class="text-slate-300">Track the latest updates to IPL</p>
+            </div>
+            <button class="px-4 py-2 bg-white/10 border border-white/20 rounded-lg hover:bg-white/20 transition-colors">
+                <i class="fas fa-rss mr-2"></i>RSS Feed
+            </button>
+        </div>
+    </div>
+</section>
+
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Filters -->
+        <div class="bg-white rounded-xl shadow-sm border p-4 mb-6 flex flex-wrap gap-4">
+            <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm">
+                <option>All changes</option>
+                <option>New resources</option>
+                <option>Edits</option>
+                <option>Category changes</option>
+            </select>
+            <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm">
+                <option>Last 24 hours</option>
+                <option>Last 7 days</option>
+                <option>Last 30 days</option>
+            </select>
+        </div>
+
+        <!-- Changes List -->
+        <div class="bg-white rounded-xl shadow-sm border divide-y">
+            <div class="p-4 hover:bg-gray-50 transition-colors flex items-start">
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                    <i class="fas fa-plus text-green-600 text-sm"></i>
                 </div>
-                <div class="flex gap-2">
-                    <button
-                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm hover:bg-gray-50 transition-colors">
-                        <i class="fas fa-rss mr-2"></i>RSS Feed
-                    </button>
+                <div class="flex-grow">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-gray-900">New resource added to Machine Learning</span>
+                        <span class="text-sm text-gray-500">2 hours ago</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1">Added "Stanford CS229" course</p>
                 </div>
             </div>
 
-            <!-- Filters -->
-            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
-                <div class="flex flex-wrap gap-4">
-                    <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm">
-                        <option>All changes</option>
-                        <option>New resources</option>
-                        <option>Edits</option>
-                        <option>Category changes</option>
-                    </select>
-                    <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm">
-                        <option>Last 24 hours</option>
-                        <option>Last 7 days</option>
-                        <option>Last 30 days</option>
-                    </select>
+            <div class="p-4 hover:bg-gray-50 transition-colors flex items-start">
+                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                    <i class="fas fa-edit text-blue-600 text-sm"></i>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-gray-900">Updated description in Finance</span>
+                        <span class="text-sm text-gray-500">5 hours ago</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1">Improved "Investopedia" description</p>
                 </div>
             </div>
 
-            <!-- Changes List -->
-            <div class="bg-white rounded-lg shadow-sm border border-gray-200 divide-y divide-gray-100">
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <div class="flex items-start">
-                        <div
-                            class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                            <i class="fas fa-plus text-green-600 text-sm"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between">
-                                <span class="font-medium text-gray-900">New resource added to Computing > Machine
-                                    Learning</span>
-                                <span class="text-sm text-gray-500">2 hours ago</span>
-                            </div>
-                            <p class="text-sm text-gray-600 mt-1">Added "Stanford CS229 - Machine Learning" course</p>
-                        </div>
-                    </div>
+            <div class="p-4 hover:bg-gray-50 transition-colors flex items-start">
+                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                    <i class="fas fa-folder text-purple-600 text-sm"></i>
                 </div>
-
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <div class="flex items-start">
-                        <div
-                            class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                            <i class="fas fa-edit text-blue-600 text-sm"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between">
-                                <span class="font-medium text-gray-900">Updated description in Business > Finance</span>
-                                <span class="text-sm text-gray-500">5 hours ago</span>
-                            </div>
-                            <p class="text-sm text-gray-600 mt-1">Improved description for "Investopedia Financial
-                                Dictionary"</p>
-                        </div>
+                <div class="flex-grow">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-gray-900">New subcategory in Academics</span>
+                        <span class="text-sm text-gray-500">1 day ago</span>
                     </div>
-                </div>
-
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <div class="flex items-start">
-                        <div
-                            class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                            <i class="fas fa-folder text-purple-600 text-sm"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between">
-                                <span class="font-medium text-gray-900">New subcategory added to Academics</span>
-                                <span class="text-sm text-gray-500">1 day ago</span>
-                            </div>
-                            <p class="text-sm text-gray-600 mt-1">Added "Computer Science Theory" with theoretical CS
-                                topics</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-4 hover:bg-gray-50 transition-colors">
-                    <div class="flex items-start">
-                        <div
-                            class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                            <i class="fas fa-language text-orange-600 text-sm"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-between">
-                                <span class="font-medium text-gray-900">Translation added</span>
-                                <span class="text-sm text-gray-500">2 days ago</span>
-                            </div>
-                            <p class="text-sm text-gray-600 mt-1">Portuguese translation added for Design category</p>
-                        </div>
-                    </div>
+                    <p class="text-sm text-gray-600 mt-1">Added "Computer Science Theory"</p>
                 </div>
             </div>
 
-            <!-- Pagination -->
-            <div class="flex justify-center mt-8">
-                <nav class="flex gap-2">
-                    <button
-                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm hover:bg-gray-50 disabled:opacity-50"
-                        disabled>Previous</button>
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">1</button>
-                    <button
-                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm hover:bg-gray-50">2</button>
-                    <button
-                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm hover:bg-gray-50">3</button>
-                    <button
-                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm hover:bg-gray-50">Next</button>
-                </nav>
+            <div class="p-4 hover:bg-gray-50 transition-colors flex items-start">
+                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                    <i class="fas fa-language text-orange-600 text-sm"></i>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-gray-900">Translation added</span>
+                        <span class="text-sm text-gray-500">2 days ago</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1">Portuguese translation for Design category</p>
+                </div>
             </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-8 gap-2">
+            <button class="px-4 py-2 bg-white border rounded-lg text-sm hover:bg-gray-50 disabled:opacity-50"
+                disabled>Previous</button>
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">1</button>
+            <button class="px-4 py-2 bg-white border rounded-lg text-sm hover:bg-gray-50">2</button>
+            <button class="px-4 py-2 bg-white border rounded-lg text-sm hover:bg-gray-50">3</button>
+            <button class="px-4 py-2 bg-white border rounded-lg text-sm hover:bg-gray-50">Next</button>
         </div>
     </div>
 </div>

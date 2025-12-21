@@ -1,146 +1,86 @@
 ---
 layout: default
-title: Help
+title: Help Center
 lang: en-US
-description: Get help using the Internet Public Library. Find answers to common questions, tutorials, and contact
-information.
+description: Get help with using the Internet Public Library.
 permalink: /en-US/help/
 ---
 
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Hero -->
+<section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+        <i class="fas fa-question-circle text-5xl mb-4 opacity-80"></i>
+        <h1 class="text-4xl font-bold mb-4">Help Center</h1>
+        <p class="text-xl text-purple-100 max-w-2xl mx-auto">Find answers to common questions and learn how to use IPL
+        </p>
+    </div>
+</section>
 
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <div class="flex items-center justify-center mb-4">
-                <div class="p-3 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-lg">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                        </path>
-                    </svg>
-                </div>
-            </div>
-            <h1 class="text-4xl font-bold text-slate-900 mb-4">Help Center</h1>
-            <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-                Find answers to your questions and learn how to get the most out of IPL.
-            </p>
-        </div>
+<div class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
 
-        <!-- Search -->
-        <div class="max-w-xl mx-auto mb-12">
-            <div class="relative">
-                <input type="text" placeholder="Search for help..."
-                    class="w-full px-5 py-4 pl-12 border-2 border-slate-200 rounded-2xl focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 bg-white shadow-sm">
-                <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 mb-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+        <!-- FAQ -->
+        <div class="bg-white rounded-xl shadow-sm border p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
 
             <div class="space-y-6">
-                <details class="group">
-                    <summary
-                        class="flex justify-between items-center cursor-pointer list-none p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
-                        <span class="font-semibold text-slate-900">What is the Internet Public Library?</span>
-                        <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="mt-4 px-4 text-slate-600">
-                        <p>The Internet Public Library (IPL) is a free, community-driven directory of curated
-                            educational resources. Our mission is to organize the world's best learning materials and
-                            make them accessible to everyone.</p>
-                    </div>
-                </details>
+                <div class="border-b border-gray-100 pb-6">
+                    <h3 class="font-semibold text-gray-900 mb-2">What is the Internet Public Library?</h3>
+                    <p class="text-gray-600">IPL is a free, curated directory of educational resources organized by
+                        category. Think of it as a library for the internet's best learning materials.</p>
+                </div>
 
-                <details class="group">
-                    <summary
-                        class="flex justify-between items-center cursor-pointer list-none p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
-                        <span class="font-semibold text-slate-900">How do I find resources?</span>
-                        <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="mt-4 px-4 text-slate-600">
-                        <p>You can browse resources by category, use the search function, or explore random resources.
-                            Each resource includes a description, rating, and direct link to the original content.</p>
-                    </div>
-                </details>
+                <div class="border-b border-gray-100 pb-6">
+                    <h3 class="font-semibold text-gray-900 mb-2">How can I contribute?</h3>
+                    <p class="text-gray-600">You can <a href="/en-US/submit-resource/"
+                            class="text-blue-600 hover:underline">submit new resources</a>, report broken links, suggest
+                        improvements, or help translate content.</p>
+                </div>
 
-                <details class="group">
-                    <summary
-                        class="flex justify-between items-center cursor-pointer list-none p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
-                        <span class="font-semibold text-slate-900">How can I contribute?</span>
-                        <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="mt-4 px-4 text-slate-600">
-                        <p>Visit our <a href="/en-US/contribute/" class="text-blue-600 hover:underline">Contribute
-                                page</a> to learn about the many ways you can help - from submitting new resources to
-                            translating content.</p>
-                    </div>
-                </details>
+                <div class="border-b border-gray-100 pb-6">
+                    <h3 class="font-semibold text-gray-900 mb-2">Is IPL really free?</h3>
+                    <p class="text-gray-600">Yes! IPL is completely free to use. We're an open-source project maintained
+                        by volunteers.</p>
+                </div>
 
-                <details class="group">
-                    <summary
-                        class="flex justify-between items-center cursor-pointer list-none p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
-                        <span class="font-semibold text-slate-900">Is IPL really free?</span>
-                        <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="mt-4 px-4 text-slate-600">
-                        <p>Yes! IPL is completely free to use. We're an open-source project maintained by volunteers
-                            from around the world. No subscriptions, no ads, no paywalls.</p>
-                    </div>
-                </details>
+                <div class="pb-2">
+                    <h3 class="font-semibold text-gray-900 mb-2">How do I report an issue?</h3>
+                    <p class="text-gray-600">Use our <a href="/en-US/report-issues/"
+                            class="text-blue-600 hover:underline">issue reporting form</a> or open an issue on <a
+                            href="https://github.com/InternetPublicLibrary/IPLibrary-website/issues"
+                            class="text-blue-600 hover:underline">GitHub</a>.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Contact Section -->
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
-                <div class="p-3 bg-blue-100 rounded-xl w-fit mb-4">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                        </path>
-                    </svg>
+        <!-- Contact -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="mailto:help@ipl.org"
+                class="bg-white rounded-xl shadow-sm border p-6 text-center hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-envelope text-blue-600 text-xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Email Support</h3>
-                <p class="text-slate-600 mb-4">Get in touch with our team for any questions or feedback.</p>
-                <a href="mailto:support@ipl.org"
-                    class="text-blue-600 font-semibold hover:text-blue-500">support@ipl.org</a>
-            </div>
+                <h3 class="font-semibold text-gray-900">Email Support</h3>
+                <p class="text-gray-600 text-sm">help@ipl.org</p>
+            </a>
 
-            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
-                <div class="p-3 bg-purple-100 rounded-xl w-fit mb-4">
-                    <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
+            <a href="https://github.com/InternetPublicLibrary/IPLibrary-website/discussions"
+                class="bg-white rounded-xl shadow-sm border p-6 text-center hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fab fa-github text-purple-600 text-xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">GitHub Discussions</h3>
-                <p class="text-slate-600 mb-4">Join our community discussions and get help from other users.</p>
-                <a href="https://github.com/InternetPublicLibrary/IPLibrary-website/discussions"
-                    class="text-purple-600 font-semibold hover:text-purple-500">Join Discussions</a>
-            </div>
+                <h3 class="font-semibold text-gray-900">Community</h3>
+                <p class="text-gray-600 text-sm">GitHub Discussions</p>
+            </a>
+
+            <a href="/en-US/contact/"
+                class="bg-white rounded-xl shadow-sm border p-6 text-center hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-comments text-green-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900">Contact Us</h3>
+                <p class="text-gray-600 text-sm">Send a message</p>
+            </a>
         </div>
     </div>
 </div>

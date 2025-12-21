@@ -2,71 +2,68 @@
 layout: default
 title: Donate
 lang: en-US
-description: Support the Internet Public Library. Your donation helps keep education free and accessible for everyone.
+description: Support the Internet Public Library.
 permalink: /en-US/donate/
 ---
 
-<div class="min-h-screen bg-gray-50 py-12">
-    <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
-            <div
-                class="w-20 h-20 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fas fa-heart text-white text-3xl"></i>
+<!-- Hero -->
+<section class="bg-gradient-to-r from-pink-500 to-rose-500 text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+        <i class="fas fa-heart text-5xl mb-4 opacity-80"></i>
+        <h1 class="text-4xl font-bold mb-4">Support Free Education</h1>
+        <p class="text-xl text-pink-100">Your donation helps us keep IPL free for everyone</p>
+    </div>
+</section>
+
+<div class="container mx-auto px-4 py-12">
+    <div class="max-w-2xl mx-auto">
+        <!-- Donation Form -->
+        <div class="bg-white rounded-xl shadow-sm border p-8 mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Choose an Amount</h2>
+            <div class="grid grid-cols-3 gap-4 mb-6">
+                <button
+                    class="py-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 hover:border-pink-500 hover:bg-pink-50 transition-colors">$5</button>
+                <button class="py-4 border-2 border-pink-500 bg-pink-50 rounded-lg font-bold text-pink-600">$10</button>
+                <button
+                    class="py-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 hover:border-pink-500 hover:bg-pink-50 transition-colors">$25</button>
+                <button
+                    class="py-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 hover:border-pink-500 hover:bg-pink-50 transition-colors">$50</button>
+                <button
+                    class="py-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 hover:border-pink-500 hover:bg-pink-50 transition-colors">$100</button>
+                <input type="number" placeholder="Other"
+                    class="py-4 px-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 focus:border-pink-500">
             </div>
-            <h1 class="text-3xl font-bold text-gray-900 mb-4">Support Free Education</h1>
-            <p class="text-xl text-gray-600 mb-8">
-                Your donation helps us keep IPL free and accessible for learners everywhere.
-            </p>
+            <button
+                class="w-full py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:opacity-90 transition-opacity">
+                Donate Now
+            </button>
+            <p class="text-center text-sm text-gray-500 mt-4">Secure payment powered by Stripe</p>
         </div>
 
-        <div class="max-w-2xl mx-auto">
-            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-                <h2 class="text-xl font-bold text-gray-900 mb-6">Choose an Amount</h2>
-                <div class="grid grid-cols-3 gap-4 mb-6">
-                    <button
-                        class="py-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 hover:border-blue-500 hover:bg-blue-50 transition-colors">$5</button>
-                    <button
-                        class="py-4 border-2 border-blue-500 bg-blue-50 rounded-lg font-bold text-blue-600">$10</button>
-                    <button
-                        class="py-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 hover:border-blue-500 hover:bg-blue-50 transition-colors">$25</button>
-                    <button
-                        class="py-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 hover:border-blue-500 hover:bg-blue-50 transition-colors">$50</button>
-                    <button
-                        class="py-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 hover:border-blue-500 hover:bg-blue-50 transition-colors">$100</button>
-                    <div class="relative">
-                        <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
-                        <input type="number" placeholder="Other"
-                            class="w-full py-4 pl-8 pr-4 border-2 border-gray-200 rounded-lg font-bold text-gray-900 focus:border-blue-500 focus:outline-none">
+        <!-- Where Money Goes -->
+        <div class="bg-white rounded-xl shadow-sm border p-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Where Your Money Goes</h2>
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <div class="w-24 text-sm text-gray-600">60%</div>
+                    <div class="flex-1 bg-gray-200 rounded-full h-4">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width:60%"></div>
                     </div>
+                    <div class="w-32 text-sm text-gray-600 text-right">Server & Hosting</div>
                 </div>
-                <button
-                    class="w-full py-4 bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold rounded-lg hover:opacity-90 transition-opacity">
-                    Donate Now
-                </button>
-                <p class="text-center text-sm text-gray-500 mt-4">Secure payment powered by Stripe</p>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-                <h2 class="text-xl font-bold text-gray-900 mb-4">Where Your Money Goes</h2>
-                <div class="space-y-4">
-                    <div class="flex items-center">
-                        <div class="w-2/3 bg-gray-200 rounded-full h-4 mr-4">
-                            <div class="bg-blue-600 h-4 rounded-full" style="width: 60%"></div>
-                        </div>
-                        <span class="text-sm text-gray-600">60% Server & Hosting</span>
+                <div class="flex items-center">
+                    <div class="w-24 text-sm text-gray-600">25%</div>
+                    <div class="flex-1 bg-gray-200 rounded-full h-4">
+                        <div class="bg-green-600 h-4 rounded-full" style="width:25%"></div>
                     </div>
-                    <div class="flex items-center">
-                        <div class="w-2/3 bg-gray-200 rounded-full h-4 mr-4">
-                            <div class="bg-green-600 h-4 rounded-full" style="width: 25%"></div>
-                        </div>
-                        <span class="text-sm text-gray-600">25% Development</span>
+                    <div class="w-32 text-sm text-gray-600 text-right">Development</div>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-24 text-sm text-gray-600">15%</div>
+                    <div class="flex-1 bg-gray-200 rounded-full h-4">
+                        <div class="bg-purple-600 h-4 rounded-full" style="width:15%"></div>
                     </div>
-                    <div class="flex items-center">
-                        <div class="w-2/3 bg-gray-200 rounded-full h-4 mr-4">
-                            <div class="bg-purple-600 h-4 rounded-full" style="width: 15%"></div>
-                        </div>
-                        <span class="text-sm text-gray-600">15% Community Support</span>
-                    </div>
+                    <div class="w-32 text-sm text-gray-600 text-right">Community</div>
                 </div>
             </div>
         </div>
