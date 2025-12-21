@@ -1,0 +1,182 @@
+---
+layout: default
+title: Search
+lang: en-US
+description: Search for resources across the Internet Public Library.
+permalink: /en-US/search/
+---
+
+<div class="min-h-[60vh]">
+    <!-- Search Hero -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold mb-4">Search Resources</h1>
+            <p class="text-blue-100 mb-6">Find curated resources across all categories</p>
+
+            <!-- Search Input -->
+            <div class="max-w-2xl">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Search for tutorials, tools, guides..."
+                        class="w-full px-5 py-4 pl-12 text-gray-900 bg-white rounded-xl border-0 focus:ring-4 focus:ring-blue-300 text-lg"
+                        autofocus>
+                    <i
+                        class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
+                    <button id="search-btn" aria-label="Search"
+                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results -->
+    <div class="container mx-auto px-4 py-8">
+        <div id="search-status" class="text-sm text-gray-500 mb-4"></div>
+
+        <div id="search-results" class="space-y-4">
+            <!-- Results will be populated here -->
+        </div>
+
+        <div id="no-results" class="hidden text-center py-12">
+            <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+            <h3 class="text-xl font-semibold text-gray-600 mb-2">No results found</h3>
+            <p class="text-gray-500">Try different keywords or browse our categories below</p>
+        </div>
+
+        <!-- Popular Categories -->
+        <div id="categories-section" class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Browse Categories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="/en-US/academics/"
+                    class="p-4 bg-white rounded-xl border hover:shadow-md transition-shadow text-center">
+                    <i class="fas fa-graduation-cap text-2xl text-blue-600 mb-2"></i>
+                    <div class="font-medium text-gray-800">Academics</div>
+                </a>
+                <a href="/en-US/computing/"
+                    class="p-4 bg-white rounded-xl border hover:shadow-md transition-shadow text-center">
+                    <i class="fas fa-laptop-code text-2xl text-green-600 mb-2"></i>
+                    <div class="font-medium text-gray-800">Computing</div>
+                </a>
+                <a href="/en-US/business/"
+                    class="p-4 bg-white rounded-xl border hover:shadow-md transition-shadow text-center">
+                    <i class="fas fa-briefcase text-2xl text-purple-600 mb-2"></i>
+                    <div class="font-medium text-gray-800">Business</div>
+                </a>
+                <a href="/en-US/design/"
+                    class="p-4 bg-white rounded-xl border hover:shadow-md transition-shadow text-center">
+                    <i class="fas fa-palette text-2xl text-pink-600 mb-2"></i>
+                    <div class="font-medium text-gray-800">Design</div>
+                </a>
+                <a href="/en-US/development/"
+                    class="p-4 bg-white rounded-xl border hover:shadow-md transition-shadow text-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mb-2"></i>
+                    <div class="font-medium text-gray-800">Development</div>
+                </a>
+                <a href="/en-US/marketing/"
+                    class="p-4 bg-white rounded-xl border hover:shadow-md transition-shadow text-center">
+                    <i class="fas fa-bullhorn text-2xl text-orange-600 mb-2"></i>
+                    <div class="font-medium text-gray-800">Marketing</div>
+                </a>
+                <a href="/en-US/photography/"
+                    class="p-4 bg-white rounded-xl border hover:shadow-md transition-shadow text-center">
+                    <i class="fas fa-camera text-2xl text-red-600 mb-2"></i>
+                    <div class="font-medium text-gray-800">Photography</div>
+                </a>
+                <a href="/en-US/personal-development/"
+                    class="p-4 bg-white rounded-xl border hover:shadow-md transition-shadow text-center">
+                    <i class="fas fa-user-graduate text-2xl text-teal-600 mb-2"></i>
+                    <div class="font-medium text-gray-800">Personal Dev</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+        const searchResults = document.getElementById('search-results');
+        const searchStatus = document.getElementById('search-status');
+        const noResults = document.getElementById('no-results');
+        const categoriesSection = document.getElementById('categories-section');
+
+        // Get query from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('q');
+
+        if (query) {
+            searchInput.value = query;
+            performSearch(query);
+        }
+
+        // Search on button click
+        searchBtn.addEventListener('click', function () {
+            const q = searchInput.value.trim();
+            if (q) {
+                window.history.pushState({}, '', `?q=${encodeURIComponent(q)}`);
+                performSearch(q);
+            }
+        });
+
+        // Search on Enter
+        searchInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const q = searchInput.value.trim();
+                if (q) {
+                    window.history.pushState({}, '', `?q=${encodeURIComponent(q)}`);
+                    performSearch(q);
+                }
+            }
+        });
+
+        async function performSearch(query) {
+            searchStatus.textContent = 'Searching...';
+            searchResults.innerHTML = '';
+            noResults.classList.add('hidden');
+            categoriesSection.classList.add('hidden');
+
+            try {
+                // Load search index
+                const response = await fetch('/api/en-US/search-index.json');
+                const data = await response.json();
+
+                const results = data.filter(item => {
+                    const searchText = `${item.title} ${item.description || ''} ${item.category || ''}`.toLowerCase();
+                    return searchText.includes(query.toLowerCase());
+                });
+
+                if (results.length > 0) {
+                    searchStatus.textContent = `Found ${results.length} result${results.length > 1 ? 's' : ''} for "${query}"`;
+
+                    results.forEach(item => {
+                        const resultCard = document.createElement('a');
+                        resultCard.href = item.url;
+                        resultCard.className = 'block p-4 bg-white rounded-xl border hover:shadow-md transition-shadow';
+                        resultCard.innerHTML = `
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-file-alt text-blue-600"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-gray-900 hover:text-blue-600">${item.title}</h3>
+                <p class="text-sm text-gray-500 line-clamp-2">${item.description || ''}</p>
+                <span class="text-xs text-blue-600 mt-1 inline-block">${item.url}</span>
+              </div>
+            </div>
+          `;
+                        searchResults.appendChild(resultCard);
+                    });
+                } else {
+                    searchStatus.textContent = `No results for "${query}"`;
+                    noResults.classList.remove('hidden');
+                    categoriesSection.classList.remove('hidden');
+                }
+            } catch (error) {
+                searchStatus.textContent = 'Search is currently unavailable. Please browse categories below.';
+                categoriesSection.classList.remove('hidden');
+            }
+        }
+    });
+</script>
