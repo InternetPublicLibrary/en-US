@@ -2,8 +2,8 @@
 layout: default
 title: Submit a Resource
 lang: en-US
-description: Submit a new educational resource to the Internet Public Library. Help expand our collection of curated
-learning materials.
+description: "Submit a new educational resource to the Internet Public Library. Help expand our collection of curated
+learning materials."
 permalink: /en-US/submit-resource/
 ---
 
@@ -106,3 +106,61 @@ permalink: /en-US/submit-resource/
         </div>
     </div>
 </div>
+
+<script>
+    // Pre-fill form from URL query parameters
+    document.addEventListener('DOMContentLoaded', function () {
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get('category');
+        const path = params.get('path');
+
+        if (category) {
+            // Try to match category to select option
+            const categorySelect = document.getElementById('category');
+            const categoryLower = category.toLowerCase();
+
+            // Map common category names to option values
+            const categoryMap = {
+                'computing': 'computing',
+                'computação': 'computing',
+                'academics': 'academics',
+                'acadêmicos': 'academics',
+                'business': 'business',
+                'negócios': 'business',
+                'design': 'design',
+                'development': 'development',
+                'desenvolvimento': 'development',
+                'lifestyle': 'lifestyle',
+                'estilo de vida': 'lifestyle'
+            };
+
+            // Find matching option
+            for (const [key, value] of Object.entries(categoryMap)) {
+                if (categoryLower.includes(key)) {
+                    categorySelect.value = value;
+                    break;
+                }
+            }
+
+            // Pre-fill tags with category name
+            const tagsInput = document.getElementById('tags');
+            if (tagsInput && !tagsInput.value) {
+                tagsInput.value = category.toLowerCase().replace(/\s+/g, '-');
+            }
+        }
+
+        // Show context banner if coming from a category page
+        if (path) {
+            const formHeader = document.querySelector('.text-center.mb-8');
+            if (formHeader) {
+                const contextBanner = document.createElement('div');
+                contextBanner.className = 'mb-6 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800';
+                contextBanner.innerHTML = `
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Adding resource for: <strong>${category || 'category'}</strong>
+                `;
+                formHeader.after(contextBanner);
+            }
+        }
+    });
+</script>
