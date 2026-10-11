@@ -23,31 +23,31 @@ permalink: /en-US/submit-resource/
         </div>
 
         <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
-            <form action="#" method="POST" class="space-y-6">
+            <form action="https://github.com/InternetPublicLibrary/en-US/issues/new" method="get" data-ipl-issue-form data-title-prefix="Resource suggestion: " class="space-y-6">
                 <div>
                     <label for="url" class="block text-sm font-medium text-slate-700 mb-2">Resource URL *</label>
-                    <input id="url" name="url" type="url" required
+                    <input id="url" data-issue-field="Resource URL" type="url" required
                         class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200"
                         placeholder="https://example.com/resource">
                 </div>
 
                 <div>
                     <label for="title" class="block text-sm font-medium text-slate-700 mb-2">Resource Title *</label>
-                    <input id="title" name="title" type="text" required
+                    <input id="title" data-issue-field="Resource Title" data-issue-title type="text" required
                         class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200"
                         placeholder="e.g., Introduction to Machine Learning">
                 </div>
 
                 <div>
                     <label for="description" class="block text-sm font-medium text-slate-700 mb-2">Description *</label>
-                    <textarea id="description" name="description" rows="4" required
+                    <textarea id="description" data-issue-field="Description" rows="4" required
                         class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200"
                         placeholder="Describe what this resource offers and who would benefit from it..."></textarea>
                 </div>
 
                 <div>
                     <label for="category" class="block text-sm font-medium text-slate-700 mb-2">Category *</label>
-                    <select id="category" name="category" required
+                    <select id="category" data-issue-field="Category" required
                         class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200">
                         <option value="">Select a category</option>
                         <option value="computing">Computing</option>
@@ -61,7 +61,7 @@ permalink: /en-US/submit-resource/
 
                 <div>
                     <label for="type" class="block text-sm font-medium text-slate-700 mb-2">Resource Type</label>
-                    <select id="type" name="type"
+                    <select id="type" data-issue-field="Resource Type"
                         class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200">
                         <option value="website">Website</option>
                         <option value="course">Course</option>
@@ -75,14 +75,14 @@ permalink: /en-US/submit-resource/
 
                 <div>
                     <label for="tags" class="block text-sm font-medium text-slate-700 mb-2">Tags</label>
-                    <input id="tags" name="tags" type="text"
+                    <input id="tags" data-issue-field="Tags" type="text"
                         class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200"
                         placeholder="e.g., python, machine-learning, beginner">
                     <p class="mt-1 text-xs text-slate-500">Separate tags with commas</p>
                 </div>
 
                 <div class="flex items-start">
-                    <input id="free" name="free" type="checkbox" checked
+                    <input id="free" data-issue-field="This resource is free" type="checkbox" checked
                         class="h-4 w-4 mt-1 text-green-600 focus:ring-green-500 border-slate-300 rounded">
                     <label for="free" class="ml-2 block text-sm text-slate-700">This resource is free</label>
                 </div>
@@ -94,10 +94,12 @@ permalink: /en-US/submit-resource/
                     </p>
                 </div>
 
-                <button type="submit"
+                <input type="hidden" name="title"><input type="hidden" name="body">
+                    <p class="text-sm text-gray-600">Submissions become public GitHub issues (a GitHub account is required). Do not include personal data.</p>
+                    <button type="submit"
                     class="w-full py-3 px-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
-                    Submit Resource
-                </button>
+                        Open suggestion on GitHub
+                    </button>
             </form>
         </div>
 
