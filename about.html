@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: info
 title: About IPL
 lang: en-US
 description: Learn about the Internet Public Library.
@@ -10,25 +10,26 @@ permalink: /en-US/about/
 <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-12">
     <div class="container mx-auto px-4">
         <div class="flex items-center gap-4 mb-4">
-            <span
-                class="bg-white/20 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl font-bold">IP</span>
+            <span class="flex flex-shrink-0">{% include components/atoms/brand-mark.html size="48" id_suffix="about" %}</span>
             <h1 class="text-4xl font-bold">About Internet Public Library</h1>
         </div>
         <p class="text-xl text-blue-100 max-w-3xl">The Free Encyclopedia of Curated Resources</p>
     </div>
 </section>
 
+{%- comment -%} Real counts from _data (placeholder resources excluded). {%- endcomment -%}
+{%- assign about_data = site.data[page.lang] -%}{%- include components/atoms/real-resources.html node=about_data -%}
 <div class="container mx-auto px-4 py-12">
     <div class="max-w-4xl mx-auto">
 
         <!-- Stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div class="bg-white rounded-xl shadow-sm border p-6 text-center">
-                <div class="text-3xl font-bold text-blue-600">50+</div>
+                <div class="text-3xl font-bold text-blue-600">{{ site.data[page.lang].menu.size }}</div>
                 <div class="text-gray-600">Categories</div>
             </div>
             <div class="bg-white rounded-xl shadow-sm border p-6 text-center">
-                <div class="text-3xl font-bold text-green-600">5,000+</div>
+                <div class="text-3xl font-bold text-green-600">{{ real_resource_total }}</div>
                 <div class="text-gray-600">Resources</div>
             </div>
             <div class="bg-white rounded-xl shadow-sm border p-6 text-center">

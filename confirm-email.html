@@ -1,28 +1,23 @@
 ---
-layout: default
+layout: info
 title: Confirm Email
 lang: en-US
 description: Confirm your email address.
 permalink: /en-US/confirm-email/
 ---
 
-<div class="min-h-[70vh] flex items-center justify-center py-12">
-    <div class="w-full max-w-md px-4">
-        <div class="bg-white rounded-xl shadow-lg border p-8 text-center">
-            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fas fa-envelope text-blue-600 text-2xl"></i>
-            </div>
-            <h1 class="text-2xl font-bold text-gray-900 mb-4">Check Your Email</h1>
-            <p class="text-gray-600 mb-6">
-                We've sent a confirmation link to your email address. Please click the link to verify your account.
-            </p>
-            <div class="bg-gray-50 rounded-lg p-4 mb-6">
-                <p class="text-sm text-gray-500">Didn't receive the email?</p>
-                <button class="mt-2 text-blue-600 font-medium hover:underline">Resend confirmation email</button>
-            </div>
-            <p class="text-sm text-gray-500">
-                Wrong email? <a href="/en-US/signup/" class="text-blue-600 hover:underline">Go back to sign up</a>
-            </p>
-        </div>
-    </div>
+<section class="pb-4">
+    <h1 class="text-3xl font-semibold mb-2">{{ page.title }}</h1>
+    <p class="text-lg text-gray-700 max-w-prose">The Internet Public Library has no user accounts. Reading is free and open, with no sign-up, and contributions happen on GitHub.</p>
+</section>
+
+<div class="bg-white border border-gray-200 rounded-lg p-5 sm:p-6">
+    <h2 class="text-xl font-semibold mb-3">How to take part without an account</h2>
+    <ul class="space-y-3">
+        <li><a href="/en-US/submit-resource/" class="font-semibold text-blue-700 underline">Suggest a resource</a> — opens a prefilled issue on GitHub.</li>
+        <li><a href="/en-US/report-issues/" class="font-semibold text-blue-700 underline">Report a problem</a> — broken links, outdated or wrong information.</li>
+        <li><a href="https://github.com/InternetPublicLibrary/en-US" rel="noopener" class="font-semibold text-blue-700 underline">Edit pages on GitHub</a> — every page has an "Edit" tab that opens its source file.</li>
+        <li><a href="/en-US/contribute/" class="font-semibold text-blue-700 underline">Contribution guide</a> — what we accept and how review works.</li>
+    </ul>
+    <p class="text-sm text-gray-600 mt-4">A GitHub account is only needed to contribute. IPL does not store passwords or personal data.</p>
 </div>
